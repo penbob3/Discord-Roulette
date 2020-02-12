@@ -1,0 +1,96 @@
+body {
+    background: grey;
+}
+
+#infomsg {
+    text-align: center;
+    margin-top: 10vh;
+}
+
+#profpic {
+    height: 64px;
+    width: xx;
+    border-radius: 64px;
+    /*border-width: 3px;
+    border-color: grey;
+    border-style: solid;*/
+    position: relative;
+    margin-top: 16px;
+    margin-left: 16px;
+    float: left;
+}
+
+#msgbody {
+    min-height: 100px;
+    width: 500px;
+    background: #36393e;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 50vw;
+    top: 35vh;
+    margin-left: -250px;
+    margin-top: -100px;
+    box-shadow: 0px 0px 10px #000000;
+}
+
+#namebox {
+    float: right;
+    width: 200px;
+    margin-left: 16px;
+    margin-top: 6px;
+}
+
+h1 {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 375;
+    letter-spacing: 1px;
+    color: white;
+    font-size: 18px;
+    transition: 0.75s;
+}
+
+h2 {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 300;
+    letter-spacing: 1px;
+    color: whitesmoke;
+    font-size: 18px;
+    word-wrap:break-word;
+    transition: 0.75s;
+}
+
+h3 {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 375;
+    letter-spacing: 1px;
+    color: white;
+    font-size: 22px;
+}
+
+#button {
+    width: 90px;
+    height: 45px;
+    background: grey;
+    border-radius: 8px;
+    margin-top: 30px;
+    margin-left: 205px;
+}
+
+#msgbox {
+    height: auto;
+    width: 380px;
+    float: left;
+    margin-top: -45px;
+    margin-left: 97px;
+}
+
+#msgimg {
+    max-width: 365px;
+    max-height: 500px;
+    /*width: auto;
+    height: auto;*/
+    object-fit: cover;
+    position: relative;
+    margin-left: 100px;
+    margin-bottom: 30px;
+    margin-top: -20px;
+}
