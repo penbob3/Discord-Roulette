@@ -1,5 +1,27 @@
-body {
-    background: grey;
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;  
+    right: 0;
+    overflow: auto;
+    background: #36393e;
+    z-index: -1;
+}
+
+#mutepic {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 12px;
+    margin-top: 12px;
+    width: 48px;
+    height: 48px;
+    transition: 0.2s;
+}
+
+#mutepic:hover {
+    transform: scale(1.1);
 }
 
 #infomsg {
@@ -37,9 +59,11 @@ body {
 
 #namebox {
     float: right;
-    width: 200px;
+    width: 400px;
     margin-left: 16px;
     margin-top: 6px;
+    height: 32px;
+    display: flex;
 }
 
 h1 {
@@ -65,6 +89,17 @@ h3 {
     color: white;
     font-size: 22px;
 }
+
+h4 {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 375;
+    letter-spacing: 1px;
+    color: #D3D3D3;
+    font-size: 14px;
+    line-height: 10px;
+    float:right;
+    margin-left: 10px;
+}
+
 
 #button {
     width: 90px;

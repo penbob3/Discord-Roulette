@@ -4,6 +4,7 @@ var ytKey;
 var jsonPath;
 var currUrl;
 var msgGone = false;
+var muted = false;
 
 async function extractVideoID(url){
     var currUrl = url;
@@ -40,6 +41,27 @@ function remoteRequest(url) {
     })
 }
 
+function togMute() {
+    if (muted == true) {
+        muted = false;
+        $("#mutepic").attr("src", "mute.png")
+    } else {
+        muted = true;
+        $("#mutepic").attr("src", "unmute.png")
+    }
+}
+
+function formatAMPM(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+  }
+
 async function loadIn() {
     var envars = await remoteRequest('vars.json')
     envars = JSON.parse(envars);
@@ -47,6 +69,7 @@ async function loadIn() {
     jsonPath = envars.msgFileName;
     var jsonObj = await remoteRequest(jsonPath);
     msgs = JSON.parse(jsonObj);
+    console.log(msgs);
     jsonFetched = true;
 }
 
@@ -79,10 +102,20 @@ async function newMsg() {
             $("#infomsg").css("opacity", "0");
             msgGone = true;
         }
+        if (muted == false) {
+            var audio = new Audio('notif.mp3');
+            audio.play();
+        }
         divPulse("#msgbody");
         $("#msgimg").attr("src", "");
         var len = msgs.messages.length;
         var num = Math.floor((Math.random() * len) + 1);
+        var timestamp = msgs.messages[num].timestamp;
+        var timedate = new Date(timestamp);
+        var time = formatAMPM(timedate);
+        var date = timedate.getDate() + "/" + timedate.getMonth() + "/" + timedate.getFullYear();
+        var fullString = date + " at " + time;
+        $("#timetext").html(fullString);
         var msg = msgs.messages[num].content;
         var picurl = msgs.messages[num].author.avatarUrl;
         $("#profpic").attr("src", picurl);
