@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
@@ -7,6 +8,9 @@
 <link rel="stylesheet" type="text/css" href="Main.css">
 </head>
 <body onload="loadIn()">
+<input type="file" id="jsonin" onchange="getFile()"/>
+<label id="jsoninlab" for="jsonin">Upload JSON..</label>
+<img src="roulettelogo.png" alt="Whoops!" id="mainlogo" onclick="newTab('https://github.com/penbob3/Discord-Roulette')">
 <img id="mutepic" src="mute.png" alt="Whoops!" onclick="togMute()">
 <div id="bg"></div>
 <h3 id="infomsg"> Press Space to generate new message... </h3>    
@@ -21,6 +25,6 @@
     </div>
     <img id="msgimg" src="">
 </div>
-
+<a href='https://ko-fi.com/I3I4YP6T' target='_blank'><img id="kofibut" src='kofi.png' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 </body>
 </html>
