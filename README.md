@@ -1,6 +1,8 @@
 # Discord-Roulette
-JS Web App that displays a random Discord message from your chosen chat
+JS Web App that displays a random Discord message from your chosen chat.
+
 http://discordroulette.xyz
+
 ![Example Image](https://i.ibb.co/J776CbH/fucked.png)
 
 # Making it Work
