@@ -5,6 +5,43 @@ var jsonPath;
 var currUrl;
 var msgGone = false;
 var muted = false;
+var isSettingUp = false;
+var justImg = false;
+var justText = false;
+
+function togSettings() {
+    if (isSettingUp == false) {
+        isSettingUp = true;
+        $("#settingsmenu").removeClass("close");
+        $("#settingsmenu").addClass("open");
+    } else {
+        isSettingUp = false;
+        $("#settingsmenu").removeClass("open");
+        $("#settingsmenu").addClass("close");
+    }
+}
+
+function togJustImg() {
+    if (justImg == false) {
+        justImg = true;
+        if (justText== true) {togJustText()}
+        $("#imgonlycheck").attr("src", "check.png");
+    } else {
+        justImg = false;
+        $("#imgonlycheck").attr("src", "uncheck.png");
+    }
+}
+
+function togJustText() {
+    if (justText == false) {
+        justText = true;
+        if (justImg== true) {togJustImg()}
+        $("#textonlycheck").attr("src", "check.png");
+    } else {
+        justText = false;
+        $("#textonlycheck").attr("src", "uncheck.png");
+    }
+}
 
 function getFile() {
     var fileUpload = document.getElementById("jsonin").files[0];
@@ -73,9 +110,11 @@ function formatAMPM(date) {
   }
 
 async function loadIn() {
-    var envars = await remoteRequest('vars.json')
+    var envars = await remoteRequest('vars.json');
+    console.log(envars);
     envars = JSON.parse(envars);
     ytKey = envars.ytAPIKey;
+    console.log(envars);
     //Add Stuff Here
     //msgs = JSON.parse(jsonObj);
     console.log(msgs);
@@ -118,7 +157,32 @@ async function newMsg() {
         divPulse("#msgbody");
         $("#msgimg").attr("src", "");
         var len = msgs.messages.length;
-        var num = Math.floor((Math.random() * len) + 1);
+        if (justImg == true) {
+            do {
+                var num = Math.floor((Math.random() * len) + 1);
+                try {
+                    var imgurl = msgs.messages[num].attachments[0].url;
+                } catch {
+                    var imgurl = "";
+                }
+            } while (imgurl == "");
+        } else if (justText == true) {
+            do {
+                var num = Math.floor((Math.random() * len) + 1);
+                try {
+                    var imgurl = msgs.messages[num].attachments[0].url;
+                } catch {
+                    var imgurl = "";
+                }
+            } while (imgurl !== "");
+        } else {
+            var num = Math.floor((Math.random() * len) + 1);
+            try {
+                var imgurl = msgs.messages[num].attachments[0].url;
+            } catch {
+                var imgurl = "";
+            }
+        }
         var timestamp = msgs.messages[num].timestamp;
         var timedate = new Date(timestamp);
         var time = formatAMPM(timedate);
@@ -130,11 +194,6 @@ async function newMsg() {
         $("#profpic").attr("src", picurl);
         var name = msgs.messages[num].author.name;
         $("#nametext").html(name);
-        try {
-            var imgurl = msgs.messages[num].attachments[0].url;
-        } catch {
-            var imgurl = "";
-        }
         $("#msgtext").html(msg);
         $("#msgtext").css("color", "whitesmoke");
         $("#msgimg").attr("src", imgurl);

@@ -8,6 +8,17 @@
 <link rel="stylesheet" type="text/css" href="Main.css">
 </head>
 <body onload="loadIn()">
+<div class="close" id="settingsmenu">
+    <h1 style="text-align: center; margin-top: 12px;">Settings</h1>
+    <div style="height: 26px;">
+        <h1 style="color:lightgray; margin-left: 20px; margin-top: 4px; display: inline-block;">Just Images:</h1>
+        <img onclick="togJustImg()" src="uncheck.png" alt="Whoops!" id="imgonlycheck">
+    </div>
+    <div style="margin-top: 14px; height: 26px;">
+        <h1 style="color:lightgray; margin-left: 20px; margin-top: 4px; display: inline-block;">Just Text:</h1>
+        <img onclick="togJustText()" src="uncheck.png" alt="Whoops!" id="textonlycheck">
+    </div>
+</div>
 <input type="file" id="jsonin" onchange="getFile()"/>
 <label id="jsoninlab" for="jsonin">Upload JSON..</label>
 <img src="roulettelogo.png" alt="Whoops!" id="mainlogo" onclick="newTab('https://github.com/penbob3/Discord-Roulette')">
@@ -26,5 +37,7 @@
     <img id="msgimg" src="">
 </div>
 <a href='https://ko-fi.com/I3I4YP6T' target='_blank'><img id="kofibut" src='kofi.png' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+<img src="settings.png" id="settingsbut" alt="OH NO!" onclick="togSettings()">
+
 </body>
 </html>
