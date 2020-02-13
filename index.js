@@ -109,7 +109,12 @@ function formatAMPM(date) {
     return strTime;
   }
 
+function fadeInGuide() {
+    $("#guide").fadeIn();
+}
+
 async function loadIn() {
+    var timed = setTimeout(fadeInGuide, 500);
     var envars = await remoteRequest('vars.json');
     console.log(envars);
     envars = JSON.parse(envars);

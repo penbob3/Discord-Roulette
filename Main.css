@@ -9,6 +9,30 @@
     z-index: -1;
 }
 
+#helpbutton {
+    background: #e04f5f;
+    height: 30px;
+    width: 30px;
+    border-radius: 4px;
+    position: absolute;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 370;
+    letter-spacing: 1px;
+    color: white;
+    font-size: 22px;
+    transition: 0.75s;
+    text-align: center;
+    line-height: 29px;
+    left: 0;
+    top: 0;
+    margin-top: 13px;
+    margin-left: 144px;
+    transition: 0.2s;
+}
+
+#helpbutton:hover {
+    transform: scale(1.075);
+}
+
 .open {
     opacity: 1;
     margin-bottom: 16px;
@@ -21,6 +45,37 @@
 
 body {
     overflow: hidden;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#guide {
+    display: none;
+    height: 187px;
+    width: 200px;
+    background: #e04f5f;
+    position: absolute;
+    margin-top: 28px;
+    margin-left: 24px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px #000000;
+    padding: 6px;
+}
+
+#arrow {
+    
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #e04f5f;
+    position: absolute;
+    margin-top: -20px;
+    margin-left: 100px;
 }
 
 #settingsmenu {    
@@ -227,6 +282,17 @@ h4 {
     margin-left: 10px;
 }
 
+h5 {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 375;
+    letter-spacing: 1px;
+    color: white;
+    font-size: 22px;
+    transition: 0.75s;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
 
 #button {
     width: 90px;

@@ -22,7 +22,13 @@
     </div>
 </div>
 <input type="file" id="jsonin" onchange="getFile()"/>
-<label id="jsoninlab" for="jsonin">Upload JSON..</label>
+<label onclick='$("#guide").fadeOut();' id="jsoninlab" for="jsonin">Upload JSON..</label>
+<div id="helpbutton" onclick='$("#guide").fadeToggle();'>?</div>
+<div id="guide" onclick='$("#guide").fadeOut();' title="Click to close...">    
+    <div id="arrow"></div>
+    <h1 style="margin-left: 6px;">Click to upload your channel's JSON file. <br> <br> Don't know what that is or how to get it? See this guide:</h1>
+    <h1 style="margin-left: -6px; text-align: center;"><a href="http://discordroulette.xyz/guide" target=”_blank”>Discord Guide</a></h1>
+</div>
 <img src="roulettelogo.png" alt="Whoops!" id="mainlogo" onclick="newTab('https://github.com/penbob3/Discord-Roulette')">
 <img id="mutepic" src="mute.png" alt="Whoops!" onclick="togMute()">
 <div id="bg"></div>
