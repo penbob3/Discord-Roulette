@@ -6,6 +6,16 @@ var currUrl;
 var msgGone = false;
 var muted = false;
 
+function getFile() {
+    var fileUpload = document.getElementById("jsonin").files[0];
+    var realfile = new FileReader;
+    realfile.onload = () => {
+        msgs = JSON.parse(realfile.result);
+        jsonFetched = true;
+    }
+    realfile.readAsText(fileUpload);
+}
+
 async function extractVideoID(url){
     var currUrl = url;
     return new Promise(async (resolve, reject) => {
@@ -66,11 +76,9 @@ async function loadIn() {
     var envars = await remoteRequest('vars.json')
     envars = JSON.parse(envars);
     ytKey = envars.ytAPIKey;
-    jsonPath = envars.msgFileName;
-    var jsonObj = await remoteRequest(jsonPath);
-    msgs = JSON.parse(jsonObj);
+    //Add Stuff Here
+    //msgs = JSON.parse(jsonObj);
     console.log(msgs);
-    jsonFetched = true;
 }
 
 async function getJson() {
@@ -95,10 +103,11 @@ function divPulse(div) {
 }
 
 async function newMsg() {
-    if (jsonFetched == false) {swal("Error!", "Messages have not loaded!", "error");} else {
+    if (jsonFetched == false) {swal("Error!", "Local JSON file not selected!", "error");} else {
         if (msgGone == false) {
             $("#infomsg").css("transition", "1s");
             $("#infomsg").css("margin-top", "8vh");
+            //Activate the line below when JSON loads
             $("#infomsg").css("opacity", "0");
             msgGone = true;
         }
@@ -148,11 +157,6 @@ async function newMsg() {
     }   
 }
 
-function runStart() {
-    getJson();
-    newMsg();
-}
-
 document.addEventListener('keyup', function(e){
-    if (e.keyCode === 32) {newMsg()};
+    if (e.keyCode === 32) {e.preventDefault(); newMsg()};
 });

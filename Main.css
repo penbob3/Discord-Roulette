@@ -9,6 +9,61 @@
     z-index: -1;
 }
 
+#kofibut {
+    position: absolute;
+    height:34px;
+    margin-left: 4px;
+    margin-bottom: 12px;
+    bottom: 0;
+    transition: 0.2s;
+}
+
+#kofibut:hover {
+    transform: scale(1.075);
+}
+
+
+#mainlogo {
+    width: 300px;
+    height: auto;
+    position: absolute;
+    top: 1.3%;
+    left: 50%;
+    margin-left: -154px;
+    transition: 0.2s;
+}
+
+#mainlogo:hover {
+    transform: scale(1.075);
+}
+
+#jsonin {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+#jsoninlab {
+    line-height: 30px;
+    background: #e04f5f;
+    border-radius: 4px;
+    display: inline-block;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    color: white;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 14px;
+    transition: 0.2s;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+#jsoninlab:hover {
+    transform: scale(1.075);
+}
+
 #mutepic {
     position: absolute;
     right: 0;
