@@ -120,8 +120,6 @@ async function loadIn() {
     envars = JSON.parse(envars);
     ytKey = envars.ytAPIKey;
     console.log(envars);
-    //Add Stuff Here
-    //msgs = JSON.parse(jsonObj);
     console.log(msgs);
 }
 
@@ -135,8 +133,6 @@ function divChange(div, property, value) {
 }
 
 function divPulse(div) {
-    //$(div).css("transition", "0.1s");
-    //$(div).css("transform", "scale(1.075)");
     divChange(div, "transition", "0.1s");
     divChange(div, "transform", "scale(1.05)")
     var reverse = setTimeout(divChange, 100, div, "transform", "scale(1)")
