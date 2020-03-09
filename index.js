@@ -25,10 +25,10 @@ function togJustImg() {
     if (justImg == false) {
         justImg = true;
         if (justText== true) {togJustText()}
-        $("#imgonlycheck").attr("src", "check.png");
+        $("#imgonlycheck").attr("src", "public/check.png");
     } else {
         justImg = false;
-        $("#imgonlycheck").attr("src", "uncheck.png");
+        $("#imgonlycheck").attr("src", "public/uncheck.png");
     }
 }
 
@@ -36,10 +36,10 @@ function togJustText() {
     if (justText == false) {
         justText = true;
         if (justImg== true) {togJustImg()}
-        $("#textonlycheck").attr("src", "check.png");
+        $("#textonlycheck").attr("src", "public/check.png");
     } else {
         justText = false;
-        $("#textonlycheck").attr("src", "uncheck.png");
+        $("#textonlycheck").attr("src", "public/uncheck.png");
     }
 }
 
@@ -91,10 +91,10 @@ function remoteRequest(url) {
 function togMute() {
     if (muted == true) {
         muted = false;
-        $("#mutepic").attr("src", "mute.png")
+        $("#mutepic").attr("src", "public/mute.png")
     } else {
         muted = true;
-        $("#mutepic").attr("src", "unmute.png")
+        $("#mutepic").attr("src", "public/unmute.png")
     }
 }
 
@@ -125,10 +125,6 @@ async function loadIn() {
     console.log(msgs);
 }
 
-async function getJson() {
-    $.getJSON("allmess.json", (json) => {msgs = json;});
-}
-
 function newTab(url) {
     var win = window.open(url, '_blank');
     win.focus();
@@ -156,7 +152,7 @@ async function newMsg() {
             msgGone = true;
         }
         if (muted == false) {
-            var audio = new Audio('notif.mp3');
+            var audio = new Audio('public/notif.mp3');
             audio.play();
         }
         divPulse("#msgbody");
