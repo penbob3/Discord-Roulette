@@ -120,6 +120,20 @@ body {
     transform: scale(1.075);
 }
 
+#hidenamecheck {
+    width: 24px;
+    height: 24px;
+    float: right;
+    margin-right: 20px;
+    margin-top: 4.5px;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+#textonlycheck:hover {
+    transform: scale(1.075);
+}
+
 
 #settingsbut {
     position: absolute;
@@ -149,6 +163,75 @@ body {
     transform: scale(1.075);
 }
 
+.selectpfp {
+    height: 64px;
+    width: xx;
+    border-radius: 64px;
+    margin-left: 6px;
+    margin-right: 6px;
+    transition: 0.15s
+}
+.selectpfp:hover {
+    filter: brightness(70%);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.selectedpfp {
+    filter: brightness(50%);
+}
+
+#curruserbar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 105px;
+}
+
+#userbar {
+    max-width: 50vw;
+    height: 75px;
+    background-color: darkslategrey;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: -5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+
+    background: #36393e;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 0px 0px 10px #000000;
+}
+
+html {
+    --scrollbarBG: #36393e;
+    --thumbBG: rgb(89, 106, 114);
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG) ;
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG);
+}
 
 #mainlogo {
     width: 300px;
@@ -222,6 +305,7 @@ body {
     margin-top: 16px;
     margin-left: 16px;
     float: left;
+    transition: 0.1s;
 }
 
 #msgbody {
@@ -233,7 +317,7 @@ body {
     flex-direction: column;
     position: absolute;
     left: 50vw;
-    top: 35vh;
+    top: 30vh;
     margin-left: -250px;
     margin-top: -100px;
     box-shadow: 0px 0px 10px #000000;
@@ -246,6 +330,19 @@ body {
     margin-top: 6px;
     height: 32px;
     display: flex;
+    transition: 0.1s;
+}
+
+.opacnone {
+    opacity: 0
+}
+
+.namepiccomboclass:hover #namebox {
+    opacity: 1;
+}
+
+.namepiccomboclass:hover #profpic {
+    opacity: 1;
 }
 
 h1 {
@@ -313,7 +410,7 @@ h5 {
 
 #msgimg {
     max-width: 365px;
-    max-height: 500px;
+    max-height: 450px;
     /*width: auto;
     height: auto;*/
     object-fit: cover;

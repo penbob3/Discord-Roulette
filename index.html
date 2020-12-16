@@ -20,6 +20,10 @@
         <h1 style="color:lightgray; margin-left: 20px; margin-top: 4px; display: inline-block;">Just Text:</h1>
         <img onclick="togJustText()" src="public/uncheck.png" alt="Whoops!" id="textonlycheck">
     </div>
+    <div style="margin-top: 14px; height: 26px;">
+        <h1 style="color:lightgray; margin-left: 20px; margin-top: 4px; display: inline-block;">Hide Name:</h1>
+        <img onclick="togHideName()" src="public/uncheck.png" alt="Whoops!" id="hidenamecheck">
+    </div>
 </div>
 <input type="file" id="jsonin" onchange="getFile()"/>
 <label onclick='$("#guide").fadeOut();' id="jsoninlab" for="jsonin">Upload JSON..</label>
@@ -35,7 +39,7 @@
 <h3 id="infomsg"> Press Space to generate new message... </h3>    
 <div id="msgbody">
     <div>
-    <div style="display: inline-block;">
+    <div id="namepiccombo" class="" style="display: inline-block;">
         <img id="profpic" src="">
         <div id="namebox"><h1 id="nametext"></h1><h4 id="timetext"></h4></div>
         
@@ -45,6 +49,9 @@
     <img id="msgimg" src="">
 </div>
 <a href='https://ko-fi.com/I3I4YP6T' target='_blank'><img id="kofibut" src='public/kofi.png' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+<div id="curruserbar" class="hidden"><h1 id="currusertext">Currently showing all messages</h1></div>
+<div id="userbar" class="hidden">
+</div>
 <img src="public/settings.png" id="settingsbut" alt="OH NO!" onclick="togSettings()">
 
 </body>
